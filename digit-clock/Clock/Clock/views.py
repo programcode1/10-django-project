@@ -18,4 +18,17 @@ def clock(request):
 
 
 def analogclock(request):
-    return render(request,'analog_clock.html')
+    da = datetime.datetime.now()
+    hour = int(da.strftime("%I"))
+    minute = int(da.strftime("%M"))
+    second = int(da.strftime("%S"))
+    #fraction 
+    secondfraction = second/60
+    minutefraction = (secondfraction + minute)/60
+    hourfraction = (minutefraction + hour)/12
+    #actual degree
+    secondrotate = secondfraction *360
+    minuterotate = minutefraction *360
+    hourrotate = hourfraction *360
+
+    return render(request,'analog_clock.html',{'hr':hourrotate,'mr':minuterotate,'sr':secondrotate})

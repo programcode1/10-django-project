@@ -1,0 +1,137 @@
+
+.inner{
+    font-family:monospace;
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+    border:5px solid black;
+    position:relative;
+    top:40;
+    left:42;
+    
+}
+#one{
+   position: absolute;
+   top:8;
+   right:23;
+}
+#two{
+    position:absolute;
+    top:25;
+    right:9;
+}
+#three{
+    position:absolute;
+    top:44;
+    right:3;
+}
+#four{
+    position:absolute;
+    top:67;
+    right:7;
+}
+#five{
+    position:absolute;
+    top:86;
+    right:24;
+}
+#six{
+    position:absolute;
+    top:93;
+    right:50;
+}
+#seven{
+    position:absolute;
+    top:86;
+    left:27;
+}
+#eight{
+    position:absolute;
+    top:68;
+    left:9;
+}
+#nine{
+    position:absolute;
+    top:45;
+    left:2;
+}
+#ten{
+    position:absolute;
+    top:22;
+    left:7;
+}
+#ele{
+    position:absolute;
+    top:4;
+    left:25;
+}
+#twl{
+    position:absolute;
+    top:0;
+    left:50;
+}
+#s{
+    position:absolute;
+    top:40;
+    left:50;
+    right:50;
+    bottom:50;
+}
+.stick{
+    position:absolute;
+    left:0;
+    bottom:150px;
+    right:0;
+    margin:0 auto;
+    transform-origin: bottom center;
+}
+.second{
+    background-color:red;
+    width:2px;
+    height:50px;
+    z-index:8;
+    transform-origin:50% 80%;
+    bottom:45px;
+    
+}
+.second::before{
+    content:'';
+    background-color:red;
+    width:9px;
+    height:9px;
+    border-radius: 100%;
+    position:absolute;
+    bottom:5;
+    left:-3;
+    
+
+}
+.minute{
+    background-color:black;
+    width:3px;
+    height:45px;
+    bottom:53px;
+}
+
+.hour{
+    position:absolute;
+    background-color:black;
+    width:5px;
+    height:40px;
+    bottom:53px;
+   
+}
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+.hour{
+  animation: rotate 43200s infinite linear;
+}
+.minute {
+  animation: rotate 3600s infinite linear;
+}
+.second {
+  animation: rotate 60s infinite linear;
+}
