@@ -1,0 +1,61 @@
+<html>
+<head>
+   {% load static %}
+   <link rel='stylesheet' href='{% static 'currency_conv.css' %}'>
+</head>    
+<body>
+    <div class='container'>
+        <p class='t'><b>Currency Converter</b></p>
+        <form method='POST'>
+            {% csrf_token %}
+            <label class='c'>Value to convert</label><br>
+            <input type='text' name='amount' class='c'><br><br>
+            
+            <label>From :</label>
+            <select name="dropdown">
+                <option value = 'USD' selected="selected">USD - US Doller</option>
+                <option value='EUR'>EURO</option>
+                <option value='GBP'>British pound</option>
+                <option value='INR'>Indian Rupee</option>
+                <option value='AUD'>Australian Doller</option>
+                <option value='CAD'>Canadian Doller</option>
+                <option value='SGD'>Singapore Doller</option>
+                <option value='CHF'>Swiss Franc</option>
+                <option value='MYR'>Malaysian Ringgit</option>
+                <option value='JPY'>Japanese Yen</option>
+                <option value='CNY'>Chinese Yuan Renminbi</option>
+                <option value='NZD'>New Zealand Doller</option>
+                <option value='THB'>Thai Baht</option>
+                <option value='HUF'>Hungarian Forint</option>
+            </select>
+        
+            <br><br>
+
+            <label >To :</label>
+            <select name="drop2" class='to'>
+                <option value = 'USD' selected="selected">USD - US Doller</option>
+                <option value='EUR'>EURO</option>
+                <option value='GBP'>British pound</option>
+                <option value='INR'>Indian Rupee</option>
+                <option value='AUD'>Australian Doller</option>
+                <option value='CAD'>Canadian Doller</option>
+                <option value='SGD'>Singapore Doller</option>
+                <option value='CHF'>Swiss Franc</option>
+                <option value='MYR'>Malaysian Ringgit</option>
+                <option value='JPY'>Japanese Yen</option>
+                <option value='CNY'>Chinese Yuan Renminbi</option>
+                <option value='NZD'>New Zealand Doller</option>
+                <option value='THB'>Thai Baht</option>
+                <option value='HUF'>Hungarian Forint</option>
+            </select>
+            <br><br>
+            <input type='reset' value='Clear'class='button'>
+            <input  type = "submit" value="Calculate" class='button' style='float:right;'>
+        </form>
+        <div class='ans'>
+            <h3>Answer :</h3>
+            <p> {{amount}} {{a}} = {{ans}} {{b}} </p>
+        </div>
+    </div>
+</body>    
+</html>
