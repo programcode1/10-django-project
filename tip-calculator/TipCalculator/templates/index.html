@@ -1,0 +1,58 @@
+<html>
+<head>
+    {% load static %}
+    <link rel='stylesheet' href = '{% static 't_cal.css' %}'>
+</head>
+<body>
+    <h3>Tip Calculator -: </h3>
+    <div class='container'>
+        <p><b>Tip Calculator</b></p>
+        <form method= "POST">
+            {% csrf_token %}
+            <table class='i'>
+                <tr>
+                    <td><label>Bill Amount:&dollar; </label></td>
+                    <td><input type='text' name='bill' ></td>
+                </tr>
+                <tr>
+                    <td><label>Tip percent:&percnt; </label></td>
+                    <td><input type='text' name='tip'></td>
+                </tr>
+                <tr>
+                    <td><label>Divide By:<br><i class='s'>how many people?</i></label></label></td>
+                    <td><input type='text' name='people'></td>
+                </tr>
+            </table>
+            <br><br>
+        
+        
+            <input type='reset' value='Clear' class='b'>
+            <button type='submit' class='b'>Calculate</button>
+
+
+            <br><br>
+            <div class='container2'>
+                <h3>Answer :</h3>
+                <table class='i ans'>
+                    <tr class='t'>
+                        <td class='t'>Tip Total :</td>
+                        <td class='t'>{{tip_total}}</td>
+                    </tr>
+                    <tr class='t'>
+                        <td class='t'>Tip Each Person:</td>
+                        <td class='t'>{{tip_people}}</td>
+                    </tr>
+                    <tr >
+                        <td class='t'>Total(Bill + Tip):</td>
+                        <td class='t'>{{total}}</td>
+                    </tr>
+                    <tr class='t'>
+                        <td class='t'>Total Each Person:</td>
+                        <td class='t'>{{total_each_people}}</td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
+</body>    
+</html>
