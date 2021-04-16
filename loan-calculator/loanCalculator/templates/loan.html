@@ -1,0 +1,47 @@
+<html>
+<head>
+<style>
+.container{
+    width:300px;
+    height:300px;
+    border:1px solid black;
+    padding:10px;
+}
+table{
+    margin:auto;
+}
+input{
+    width:90px;
+}    
+</style>    
+</head>    
+<body>
+    <div class='container'>
+       
+    <form method='POST'>
+        {% csrf_token %}
+        <p>find the montly payment</p>
+        <table>
+            <tr>
+            <td><label>Loan Amount:&dollar;</label></td>
+            <td> <input type='text' name='amount'></td>
+            </tr>
+        <tr>
+            <td><label>Interset Rate:&percnt;</label></td>
+            <td><input type = 'text' name='rate'></td>
+        </tr>
+        
+        
+        <tr><td><label>Number of Months :</label></td>
+            <td><input type = 'text' name='month'></td>
+        </tr>
+        </table>
+        
+
+        <button type='submit'>Submit</button>
+
+    </form>
+    <p>Monthly payment = {{ans}}</p>
+    </div>
+</body>
+</html>
