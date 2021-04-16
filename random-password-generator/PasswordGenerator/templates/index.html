@@ -1,0 +1,48 @@
+<html>
+<head>
+    {% load static %}
+    <link rel='stylesheet' href='{% static 'password.css' %}'>    
+</head>
+<body>
+    <div class='container'>
+        <h3>Random Password Generator -:</h3>
+        <hr>
+    <table>
+    <form method='POST'>
+        {% csrf_token %}
+        <tr>
+            <td><label>Password Length</label></td>
+            <td><input type='number' name='pwdlength' min='6'></td>
+        </tr>
+        <tr>
+            <td><label>Include Symbols :</label></td>
+            <td><input type='checkbox' name='s' value = 'symbol'>( e.g. @#$% )</td>
+        </tr>
+
+        <tr>
+            <td><label>Include number :</label></td>
+            <td><input type='checkbox' name='s' value='number'>( e.g. 123456 )</td>
+        </tr>
+        <tr>
+            <td><label>Includ Lowercase Charcters :</label></td>
+            <td><input type='checkbox' name='s' value='lower'>( e.g. abcdefgh )</td>
+        </tr>
+        <tr>
+            <td><label>Includ Uppercase Charcters :</label></td>
+            <td><input type='checkbox' name='s' value='upper'>( e.g. ABCDEFGH )</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button type='submit'>Generate Password</button></td>
+        </tr>
+        
+    </form>
+        <tr>
+            <td>Your Generate Password : </td>
+            <td>{{password}}</td>
+        </tr>
+       <p></p>
+    </table>
+    </div>
+</body>    
+</html>
