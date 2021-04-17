@@ -1,26 +1,14 @@
 <html>
 <head>
-<style>
-.container{
-    width:300px;
-    height:300px;
-    border:1px solid black;
-    padding:10px;
-}
-table{
-    margin:auto;
-}
-input{
-    width:90px;
-}    
-</style>    
+    {% load static %}
+    <link rel='stylesheet' href='{% static 'loan.css' %}'>
 </head>    
 <body>
     <div class='container'>
-       
+       <h4 class='p'>Loan Calculator</h4>
     <form method='POST'>
         {% csrf_token %}
-        <p>find the montly payment</p>
+        <p >Find the montly payment :</p>
         <table>
             <tr>
             <td><label>Loan Amount:&dollar;</label></td>
@@ -37,11 +25,15 @@ input{
         </tr>
         </table>
         
-
-        <button type='submit'>Submit</button>
+        <br>
+        <button type='submit'>Calculate</button>
 
     </form>
+    <div class='answer'>
     <p>Monthly payment = {{ans}}</p>
+    <p>Total payment of all months = {{total_months}}</p>
+    <p>Rate of interset money extra = {{extra_money}}</p>
+    </div>
     </div>
 </body>
 </html>
