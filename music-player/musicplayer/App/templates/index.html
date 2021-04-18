@@ -1,0 +1,51 @@
+<html>
+<head>
+<style>
+ body{
+   font-family:sans-serif;
+ } 
+.right{
+    float:right;
+    outline:none;
+  display:inline-block;
+
+  
+}
+.container{
+  width:500px;
+  height:90px;
+  border:1px solid white;
+  padding-top:10px;
+  padding:10px;
+  box-sizing: border-box;
+  background-color:#f4f4f4;
+  border-radius:10px;
+  
+} 
+img{
+  float:left;
+}
+span{
+  vertical-align:center;
+ 
+} 
+</style>
+</head>  
+<body>
+ shilpa
+ 
+ {% for i in item %}
+ 
+  <div class='container'>
+  <img src="{{i.image.url}}" width=50px height=60px/>
+  &nbsp;&nbsp;<span>{{i.title}}</span>
+  <audio controls play  class='right'>
+    <source src="{{i.song.url}}" type='audio/mp3'>
+  </audio>
+</div>
+  {% endfor %}  
+  
+
+
+</body>    
+</html>

@@ -14,13 +14,16 @@ def home(request):
     
     if a1 != '' and b1 != '' and amount != '':
         url = 'https://v6.exchangerate-api.com/v6/b3085e6065a637be0f218eb2/latest/'
+       
         resp = requests.get(url+a1)
         currancy_data = resp.json()
-        ans = currancy_data['conversion_rates'][b1] * int(amount)
+        ans = round((currancy_data["conversion_rates"][b1] * int(amount)),2)
+    
     return render(request,'index.html',{'a':a1,'b':b1,'amount':amount,'ans':ans})
 
 
     
+
 
 
 
