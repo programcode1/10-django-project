@@ -5,3 +5,6 @@
  - Tip-Calculator
  - Currency-Converter
  - Random-Password-Generator
+ - Image-Silder
+ - Loan-Calculator
+ - 
