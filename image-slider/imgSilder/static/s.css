@@ -1,0 +1,41 @@
+body{
+	margin:0;
+	height:auto;
+}	
+#img-slider {
+  width: 100%;
+  position:relative;
+}
+
+
+#img-frame{
+	width:100%;
+	overflow:hidden;
+	position:relative;
+}
+
+#slider {
+	position:absolute;
+	
+	
+}
+#slider img{
+	width:100%;
+	overflow:hidden;
+	top:0;
+	left:-500px;
+	
+}
+#nev{
+	position:absolute;
+	left:45%;
+	top:80%;
+}
+#nev a{
+	text-decoration: none;
+	text-align:center;
+	padding:5px;
+	background-color:black;
+	color:white;
+	z-index:10px;
+}
